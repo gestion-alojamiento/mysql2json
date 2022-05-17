@@ -1,0 +1,14 @@
+{
+  "name": "mysql2json",
+  "version": "1.0.0",
+  "description": "Descarga datos de mysql (MariaDB) en archivos json",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "José A. González",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
