@@ -48,18 +48,6 @@ conexion.query(sql_huesped, function(err, results, fields) {
 });
 
 /* 
-// Crea el archivo reserva.json
-conexion.query(sql_reserva, function(err, results, fields) {
-    if(err) throw err;
-
-    fs.writeFile(reservasARCHIVO, JSON.stringify(results), function (err) {
-      if (err) throw err;
-      console.log('¡Datos de reservas guardados con Éxito!');
-    });
-
-});
-
-
 
 // Crea un listado de objetos con los datos seleccionados de los huéspedes.
 // Necesito un array de esos objetos [{...},{...},{...}]
