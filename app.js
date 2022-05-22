@@ -61,6 +61,18 @@ conexion.query(sql_reserva, function(err, results, fields) {
 
 
 
+// Crea un listado de objetos con los datos seleccionados de los huéspedes.
+// Necesito un array de esos objetos [{...},{...},{...}]
+let sql = `SELECT JSON_OBJECT
+('idclienti', idclienti,
+ 'nome', nome, 
+ 'cognome', cognome)
+  FROM ${campoHuespedes} INTO OUTFILE '${clientesARCHIVO2}'`
+
+  conexion.query(sql, function(err, results, fields) {
+    if(err) throw err;
+});
+
 // Crea el archivo h.json
 //Actualiza el archivo de clientes con únicamente los campos idclienti, nome y cognome
 const sqlClientes = `SELECT 
@@ -78,18 +90,9 @@ conexion.query(sqlClientes, function(err, results, fields) {
 });
 
 
-// Crea un listado de objetos con los datos seleccionados de los huéspedes.
-// Necesito un array de esos objetos [{...},{...},{...}]
-let sql = `SELECT JSON_OBJECT
-('idclienti', idclienti,
- 'nome', nome, 
- 'cognome', cognome)
-  FROM ${campoHuespedes} INTO OUTFILE '${clientesARCHIVO2}'`
-
-  conexion.query(sql, function(err, results, fields) {
-    if(err) throw err;
-});
 
  */
+
+
 
 conexion.end();
